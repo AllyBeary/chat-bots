@@ -3,6 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, SafeAreaView, Platform, Text } from "react-native";
 import BasicChatbot from "../components/BasicChatbot";
 import BakersChatbot from "../components/BakersChatbot";
+import AllisonsChatbot from "../components/AllisonsChatbot"
 
 // prettier-ignore
 export const CHATBOTS = {
@@ -17,6 +18,12 @@ export const CHATBOTS = {
     name: "Baker's Dog Trivia",
     imageUrl: "https://img.freepik.com/free-vector/cute-dog-robot-cartoon-character-animal-technology-isolated_138676-3143.jpg?w=150",
     component: BakersChatbot,
+  },
+  "AllisonsChatbot": {
+    id: "AllisonsChatbot",
+    name: "Allison's Trivia",
+    imageUrl: "https://campussuite-storage.s3.amazonaws.com/prod/484005/2752018e-59b7-11e6-943a-22000bd8490f/1905904/9def99a8-4f14-11e9-9331-0a0c3653dd6c/optimizations/512",
+    component: AllisonsChatbot,
   }
 };
 
