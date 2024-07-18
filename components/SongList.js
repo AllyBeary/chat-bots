@@ -17,7 +17,6 @@ const renderSong = ({ item, index }) => (
     songTitle={item.songTitle}
     songArtists={item.songArtists}
     albumName={item.albumName}
-    duration={item.duration}
   />
 );
 

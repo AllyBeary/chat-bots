@@ -19,7 +19,7 @@ const trivia = [
 const CHATBOT_USER_OBJ = {
   _id: 2,
   name: "React Native Chatbot",
-  avatar: "https://campussuite-storage.s3.amazonaws.com/prod/484005/2752018e-59b7-11e6-943a-22000bd8490f/1905904/9def99a8-4f14-11e9-9331-0a0c3653dd6c/optimizations/512",
+  avatar: require("../assets/allison-bitmoji.jpg"),
 };
 
 export default function App() {
@@ -27,7 +27,6 @@ export default function App() {
   const [questionCounter, setQuestionCounter] = useState(0);
   const [userReady, setUserReady] = useState(false);
   const [waiting, setWaiting] = useState(false);
-  const [score, setScore] = useState(1);
 
   useEffect(() => {
     if (messages.length < 1) {

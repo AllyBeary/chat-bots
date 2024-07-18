@@ -7,7 +7,6 @@ import {
   Pressable,
 } from "react-native";
 import { Themes } from "../assets/Themes";
-import { millisToMinutesAndSeconds } from "../utils";
 import { useNavigation } from "@react-navigation/native";
 
 const SongArtists = ({ SongArtists }) => {
@@ -24,7 +23,6 @@ const Song = ({
   songTitle,
   songArtists,
   albumName,
-  duration,
 }) => {
   const navigation = useNavigation();
 
@@ -41,7 +39,7 @@ const Song = ({
         <Text style={styles.index}>{index + 1}</Text>
         <Image
           style={[styles.image, styles.albumCover]}
-          source={{ uri: imageUrl }}
+          source={ imageUrl }
         />
         <View style={styles.songArtistContainer}>
           <Text style={[styles.songTitle]} numberOfLines={1}>
@@ -51,9 +49,6 @@ const Song = ({
         </View>
         <Text style={[styles.albumName]} numberOfLines={1}>
           {albumName}
-        </Text>
-        <Text style={[styles.duration]} numberOfLines={1}>
-          {millisToMinutesAndSeconds(duration)}
         </Text>
       </View>
     </Pressable>

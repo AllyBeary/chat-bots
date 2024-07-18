@@ -2,28 +2,42 @@ import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, SafeAreaView, Platform, Text } from "react-native";
 import BasicChatbot from "../components/BasicChatbot";
-import BakersChatbot from "../components/BakersChatbot";
-import AllisonsChatbot from "../components/AllisonsChatbot"
+import AllisonsChatbot from "../components/AllisonsChatbot";
+import JulissasChatbot from "../components/JulissasChatbot";
+import LuissChatbot from "../components/LuissChatbot";
+import MasielsChatbot from "../components/MasielsChatbot";
 
 // prettier-ignore
 export const CHATBOTS = {
   "BasicChatbot": {
     id: "BasicChatbot",
-    name: "React Native Chatbot",
-    imageUrl: "https://loremflickr.com/140/140",
+    name: "Your Dream Lover 💫",
+    imageUrl: require("../assets/vanna-white.jpeg"),
     component: BasicChatbot,
-  },
-  "BakersChatbot": {
-    id: "BakersChatbot",
-    name: "Baker's Dog Trivia",
-    imageUrl: "https://img.freepik.com/free-vector/cute-dog-robot-cartoon-character-animal-technology-isolated_138676-3143.jpg?w=150",
-    component: BakersChatbot,
   },
   "AllisonsChatbot": {
     id: "AllisonsChatbot",
     name: "Allison's Trivia",
-    imageUrl: "https://campussuite-storage.s3.amazonaws.com/prod/484005/2752018e-59b7-11e6-943a-22000bd8490f/1905904/9def99a8-4f14-11e9-9331-0a0c3653dd6c/optimizations/512",
-    component: AllisonsChatbot,
+    imageUrl: require("../assets/allison-bitmoji.jpg"),
+    component: AllisonsChatbot, 
+  },
+  "JulissasChatbot": {
+    id: "JulissasChatbot",
+    name: "Julissa's Trivia",
+    imageUrl: require("../assets/julissa-bitmoji.jpeg"),
+    component: JulissasChatbot,
+  },
+  "LuissChatbot": {
+    id: "LuissChatbot",
+    name: "Luis's Hangman",
+    imageUrl: require("../assets/luis-amongus.jpg"),
+    component: LuissChatbot,
+  },
+  "MasielsChatbot": {
+    id: "MasielsChatbot",
+    name: "Masiel's Hangman",
+    imageUrl: require("../assets/masiel-bitmoji.jpg"),
+    component: MasielsChatbot,
   }
 };
 
