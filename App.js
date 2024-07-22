@@ -1,24 +1,23 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View } from "react-native";
-import { Themes } from "./assets/Themes";
-import "react-native-gesture-handler";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
-import SongList from "./components/SongList";
-import HomeScreen from "./screens/HomeScreen";
-import SongScreen from "./screens/SongScreen";
-import ChatScreen from "./screens/ChatScreen";
-
-const Stack = createStackNavigator();
+import { useState, useEffect } from 'react'
+import { supabase } from './utils/supabase'
+import Auth from './components/Auth'
+import Account from './components/Account'
+import { View } from 'react-native'
+import { Session } from '@supabase/supabase-js'
 
 export default function App() {
+  const [session, setSession] = useState(null)
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session)
+    })
+    supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session)
+    })
+  }, [])
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home Screen" component={HomeScreen} />
-        <Stack.Screen name="ChatScreen" component={ChatScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
-    // <HomeScreen />
-  );
+    <View>
+      {session && session.user ? <Account key={session.user.id} session={session} /> : <Auth />}
+    </View>
+  )
 }
