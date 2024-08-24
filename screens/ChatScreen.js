@@ -7,7 +7,6 @@ import JulissasChatbot from "../components/JulissasChatbot";
 import LuissChatbot from "../components/LuissChatbot";
 import MasielsChatbot from "../components/MasielsChatbot";
 
-// prettier-ignore
 export const CHATBOTS = {
   "BasicChatbot": {
     id: "BasicChatbot",
