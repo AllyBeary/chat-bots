@@ -26,7 +26,7 @@ export default function BasicChatbot() {
   async function fetchInitialMessage() {
     const response = await getChat(prompt);
     const message = response.choices[0].message;
-    console.log("message: ", message);
+    // console.log("message: ", message);
     const content = response.choices[0].message.content;
     console.log("content: ", content);
     addBotMessage(content);
